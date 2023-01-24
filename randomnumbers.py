@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+# pycharm
 # imports of external packages to use in our code
 import sys
 import numpy as np
@@ -11,14 +11,14 @@ import matplotlib.pyplot as plt
 # class that can generate random numbers
 class Random:
     """A random number generator class"""
-
+# this sets a seed for the random number generator
     # initialization method for Random class
     def __init__(self, seed = 5555):
         self.seed = seed
         self.m_v = np.uint64(4101842887655102017)
         self.m_w = np.uint64(1)
         self.m_u = np.uint64(1)
-        
+        # this returns a random 64- bit integer
         self.m_u = np.uint64(self.seed) ^ self.m_v
         self.int64()
         self.m_v = self.m_u
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     myx_strings = []
     for j in myx:
         myx_strings.append(str(j))
- 
+ # we use this to create or write textfile
     f = open('random.txt', 'w')
     for items in myx_strings:
         f.writelines(items + '\n')
@@ -87,15 +87,15 @@ if __name__ == "__main__":
     test = g.read().split('\n')
     g.close()
     test.pop()
-    
+    # we 
     test2 = []
     for item in test:
        test2.append(float(item))
-
+# I use that to convert strings to float and test
     
     # create histogram of our data
-    n, bins, patches = plt.hist(test2, 50, density=True, facecolor='g', alpha=0.75)
-
+    n, bins, patches = plt.hist(test2, 50, density=True, facecolor='k', alpha=0.75)
+# i labelled the histogram,axis title i use g to give the histogram black colour and test
     # plot formating options
     plt.xlabel('x')
     plt.ylabel('Probability')
